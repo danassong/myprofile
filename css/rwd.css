@@ -1,0 +1,109 @@
+@media only screen and (max-width: 900px) {
+    body, html {
+        position: static;
+    }
+    #header .nav .depth1 > li > a {
+        padding: 0 15px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #header {
+        position: relative;
+        transition: all 0.5s;
+        overflow: hidden;
+    }
+    #header.on {
+        background: #061F3A;
+        overflow: visible;
+    }
+    #header .logo {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%); 
+        text-align: center;
+        height: auto;
+        display: block;
+    }
+    #header .open-gnb {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 5%;
+        width: 25px;
+        height: 10px;
+    }
+    #header .open-gnb span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: #fff;
+        margin-bottom: 4px;
+        border-radius: 10px;
+        transition: all 0.5s;
+    }
+    #header.on .open-gnb span:nth-last-of-type(2) {
+        display: none;
+    }
+    #header.on .open-gnb span:nth-last-of-type(1) {
+        transform: rotate(45deg);
+        position: absolute;
+        top: 50%;
+    }
+    #header.on .open-gnb span:nth-last-of-type(3) {
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 50%;
+    }
+
+    #header .nav {
+        position: absolute;
+        width: 100%;
+        top: 100%; left:0; right: 0;
+        transform: translateY(0%);
+        text-align: center;
+        background: #061F3A;
+        z-index: 999;
+        opacity: 0;
+        transition: all 0.5s;
+    }
+    #header.on .nav {
+        opacity: 1;
+    }
+    #header .nav .depth1 > li {
+        display: block;
+        float: left;
+        width: 50%;
+    }
+    #header .nav .depth1 > li > a {
+        font-size: 14px;
+        color: #AED42A;
+        padding: 20px 20px;
+        display: block;
+        border: 1px solid #fff;
+    }
+    #header .nav .depth1 > li:nth-child(1) > a,
+    #header .nav .depth1 > li:nth-child(2) > a{
+        border-bottom: none;
+    }
+    #header .nav .depth1 > li:nth-child(1) > a,
+    #header .nav .depth1 > li:nth-child(3) > a {
+        border-right: none;
+    }
+
+    #main .slogun {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10%;
+    }
+    #main .slogun a > span {
+        margin-left: 0;
+    }
+    #main .imgbox {
+        width: 80%;
+        float: none;
+        margin: 0 auto 10%;
+
+    }
+}

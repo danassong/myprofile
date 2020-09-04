@@ -1,0 +1,504 @@
+@charset "utf-8";
+@import "reset.css";
+@import "common.css";
+
+.row {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+    position: relative;
+}
+
+body, html, #wrap {
+    height: 100%;
+    /* background: black; */
+}
+
+#header {
+    position: relative;
+    height: 90px;
+}
+#header-outer {
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+}
+#header .open-gnb {
+    display: none;
+}
+#header .nav {
+    position: absolute;
+    top: 50%; right: 50%;
+    transform: translate(50%, -50%);   
+}
+#header .nav .depth1 > li {
+    display: inline-block;
+}
+#header .nav .depth1 > li > a {
+    display: inline-block;
+    color: #ccc;
+    padding: 0 25px;
+    font-size: 14px;
+}
+#header .logo {
+    font-size: 22px;
+    color: #AED42A;
+    position: absolute;
+    display: block;
+    top: 50%; right: 0;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    text-align: right;
+}
+#header .logo span {
+    font-size: 12px;
+    color: #ccc;
+}
+
+
+.outlayer {
+    display: none;
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+}
+.outlayer.on {
+    display: block;
+}
+
+
+/*------------------- 첫번째 섹션: 홈 */
+
+/* 슬로건 */
+.section .slogun {
+    float: left;
+    width: 50%;
+    padding: 10% 0;
+}
+.section .slogun h1 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #fff;
+    padding: 40px 10px 20px;
+}
+.section .slogun p {
+    font-size: 14px;
+    color: #fff;
+    padding: 10px 10px 20px;
+    line-height: 1.8;
+}
+.section .slogun p > span {
+    font-weight: bold;
+    color: #AED42A;
+}
+.section .slogun a > span {
+    display: inline-block;
+    font-size: 11px;
+    color: #fff;
+    padding: 15px 50px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    margin-top: 30px;
+    margin-left: 15px;
+}
+.section .imgbox {
+    width: 50%;
+    float: right;
+    bottom: 0;
+    height: 100%;
+    margin: 10% 0 5% ;
+    padding: 10% 0 5%;
+}
+
+/* section1 배경 */
+.section-outer {
+    height: 100%;
+}
+.section-outer .section {
+    position: relative;
+    height: 100%;
+}
+.section-outer .section:nth-child(1) .slide-outer {
+    height: 100%;
+}
+.section-outer .section:nth-child(1) .slide-inner {
+    height: 100%;
+}
+.section-outer .section:nth-child(1) .slide {
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.section-outer .section:nth-child(1) .slide1 {
+    background: #004187;
+}
+.section-outer .section:nth-child(1) .slide2 {
+    /* background: darkcyan;/ */
+    background-image: url(../images/mainslide02.jpg);
+}
+.section-outer .section:nth-child(1) .slide3 {
+    background: darkturquoise;
+}
+
+/* 슬라이드 화살표 */
+.slide-outer {
+    position: relative;
+}
+.slide-outer .marrow {
+    font-size: 60px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    z-index: 999;
+}
+.slide-outer .prevArrow {
+    left: 3%;
+}
+.slide-outer .nextArrow {
+    right: 3%;
+}
+
+/* 슬라이드 막대 바 버튼 */
+.slide-outer .slick-dots {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+.slide-outer .slick-dots li {
+    display: inline-block;
+    width: 100px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 5px;
+    position: relative;
+}
+.slide-outer .slick-dots li button {
+    width: 0%;
+    height: 3px;
+    background: #fff;
+    text-indent: -99999px;
+    overflow: hidden;
+    position: absolute;
+    top: 0; left: 0;
+}
+.slide-outer .slick-dots li.slick-active button {
+    animation: progressbar 4.5s both;
+    background: #fff;
+}
+@keyframes progressbar {
+    0% {width: 0%;}
+    100% {width: 100%;}
+}
+/* 슬라이드 자동재생/멈춤 버튼 */
+.slide-outer .plpa {
+    font-size:15px; color:#fff; 
+    background:none; 
+    position:absolute; bottom:18px;
+    left:50%; margin-left:180px;
+}
+
+/* 슬라이드 위에 텍스트박스 애니메이션 */
+.slide-outer .slide .text {
+    position:absolute; width:100%;
+    text-align:center; 
+    top:50%; transform:translateY(-50%);
+    color:#fff; opacity: 0;
+}
+.slide-outer .slide.slick-active .text {
+    opacity: 1;
+}
+.slide-outer .slide .text p:nth-child(1) {
+    font-size:3.75vw; 
+    text-shadow:2px 2px 5px #555; 
+    border-bottom:1px solid #999; 
+    padding-bottom:10px; 
+    max-width:600px; margin:0 auto; 
+}
+.slide-outer .slide .text p:nth-child(2) {
+    font-size:20px; 
+    margin-top:20px; 
+    letter-spacing:6px;
+}
+.slide-outer .slide .text p:nth-child(3) {
+    font-size:20px; 
+    letter-spacing:3px;
+    position:relative; top:150px; 
+}
+
+/* 애니메이션 연결 */
+.slide-outer .slide.slick-active .text p:nth-child(1) { 
+    animation:bounceInDown 1s both 0.5s
+}
+.slide-outer .slide.slick-active .text p:nth-child(2) { 
+    animation:bounceInUp 1s both 1s
+}
+.slide-outer .slide.slick-active .text p:nth-child(3) { 
+    animation:fadeInRight 1s both 1.5s
+}
+
+
+
+
+
+
+
+/*------------------- 두번째 섹션: 포트폴리오 갤러리 */
+.portfolio {
+    position: relative;
+}
+.portfolio h2 {
+    font-size: 20px;
+    padding: 70px 0 25px 5px;
+    left: 0;
+    position: absolute;
+}
+.portfolio .tab_menu_wrap {
+    position: absolute;
+    right: 0;
+    padding: 70px 0 25px;
+}
+.portfolio .tab_menu > li {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+    text-align: center;
+}
+.portfolio .tab_menu button {
+    position: relative;
+    display: block;
+    background: none;
+    font-size: 14px;
+    color: #004187;
+}
+
+.portfolio, ul.gallery {
+    height: 100%;
+}
+
+.portfolio ul.gallery li {
+    float: left;
+    width: 33.33%;
+    height: 50%;
+    overflow: hidden;
+    padding: 5px;
+    margin-bottom: 0.5%;
+}
+
+/* 갤러리 팝업박스 */
+.portfolio .galleryPopup {
+    opacity: 0;
+    position: fixed;
+    top: 50%; bottom: 50%; left: 50%; right: 50%;
+    background: rgba(0,0,0,0.8);
+    z-index: 999999;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+.portfolio .galleryPopup.on {
+    opacity: 1;
+    top: 0%; bottom: 0%; left: 0%; right: 0%;
+    overflow: visible;
+}
+.galleryPopup .popupList {
+    position: absolute;
+    top: 50%;
+    left: 32.5%; right: 32.5%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.galleryPopup .popupList .close {
+    position: absolute;
+    top: -20px; right: -20px;
+    font-size: 40px;
+    color: #fff;
+    background: none;
+    cursor: pointer;
+}
+.galleryPopup .popupList .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: #fff;
+    background: none;
+}
+.galleryPopup .popupList .prev {
+    left: -40px;
+}
+.galleryPopup .popupList .next {
+    right: -40px;
+}
+
+
+
+
+/*------------------- 세번째 섹션: 스킬 */
+
+#skill {
+    background: #eee;
+}
+.skillContainer {
+    height: 100%;
+}
+.skillContainer h2 {
+    font-size: 20px;
+    padding: 70px 0 25px 5px;
+    left: 0;
+    position: absolute;
+}
+
+.skillContainer .skillbar span {
+    display: inline-block;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #777;
+    margin-bottom: 5px;
+
+}
+.skillContainer > div {
+    width: 60%;
+    margin: 10px auto;
+}
+.skillContainer .score {
+    display: inline-block;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    position: relative;
+    background: #fff;
+    border-radius: 50px;
+}
+.skillContainer .myscore {
+    height: 80%;
+    font-size: 12px;
+    color: #fff;
+    opacity: 0;
+    border-radius: 50px;
+    text-align: right;
+    padding-right: 20px;
+    line-height: 30px;
+}
+.skillContainer .skillbar .myscore {
+    margin: 4px 0 0 4px;
+}
+
+.skillContainer .illust .myscore {
+    background: darkblue;
+    animation: illustscore 1s both;
+}
+.skillContainer .photoshop .myscore {
+    background: darkcyan;
+    animation: photoshopscore 1s both 0.3s;
+}
+.skillContainer .indesign .myscore {
+    background: darkturquoise;
+    animation: indesignscore 1s both 0.6s;
+}
+.skillContainer .aftereffect .myscore {
+    background: skyblue;
+    animation: aftereffectscore 1s both 0.9s;
+}
+.skillContainer .premiere .myscore {
+    background: dodgerblue;
+    animation: premierescore 1s both 1.2s;
+}
+
+@keyframes illustscore {
+    0% {width: 0%;}
+    100% {width: 90%; opacity: 1;}
+}
+@keyframes photoshopscore {
+    0% {width: 0%;}
+    100% {width: 70%; opacity: 1;}
+}
+@keyframes indesignscore {
+    0% {width: 0%;}
+    100% {width: 80%; opacity: 1;}
+}
+@keyframes aftereffectscore {
+    0% {width: 0%;}
+    100% {width: 60%; opacity: 1;}
+}
+@keyframes premierescore {
+    0% {width: 0%;}
+    100% {width: 75%; opacity: 1;}
+}
+
+
+
+/*------------------- 네번째 섹션: 컨택 */
+
+#contact {
+    background-image: url(../images/landscape.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    height: 70%;
+}
+
+#contact:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 80, 180, 0.5);
+}
+
+.contactContainer h2 {
+    font-size: 20px;
+    padding: 70px 0 25px 5px;
+    left: 0;
+    position: absolute;
+    color: #fff;
+}
+.contactContainer table {
+    width: 40%;
+    float: left;
+    margin-left: 70px;
+}
+.contactContainer table tr {
+    border-bottom: 1px solid #fff;
+}
+.contactContainer table .td_label {
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+    width: 25%;
+    padding: 50px 0 25px;
+}
+.contactContainer table input{
+    background: none;
+    height: 25px;
+    width: 75%;
+    margin: 50px 0 25px;
+
+}
+
+
+/*------------------- 마지막 섹션: 푸터 */
+
+#footer {
+    height: 30%;
+    background: #071F39;
+}
+
+#footer .bye p {
+    text-align: center;
+    tab-size: 14px;
+    color: #fff;
+}
+
+#footer .bye span {
+    color: #F5C720;
+}
