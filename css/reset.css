@@ -44,7 +44,8 @@ button, input {
 }
 
 button[type=submit], input[type=submit], button[type=button], input[type=button] {
-    cursor: pointer
+    cursor: pointer;
+    border: none
 }
 
 fieldset {
