@@ -40,12 +40,12 @@ table {
 
 /* white-space:nowrap을 쓰면 자동줄바꿈이 되지 않고 칸 밖으로 오버플로우가 발생하는데 이때 표 구조가 유지되도록 하기 위해 fixed 시킴*/
 button, input {
-    border: none
+    border: none;
+    background: none;
 }
 
 button[type=submit], input[type=submit], button[type=button], input[type=button] {
     cursor: pointer;
-    border: none
 }
 
 fieldset {
