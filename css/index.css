@@ -55,6 +55,9 @@ body, html, #wrap {
     color: #ccc;
 }
 
+.section {
+    height: 100%;
+}
 
 .outlayer {
     display: none;
@@ -72,29 +75,29 @@ body, html, #wrap {
 
 /* 슬로건 */
 
-.section .slogun {
+.home .slogun {
     position: absolute;
     top: 15%;
-    left: 12%;
+    left: 11%;
     z-index: 9999999;
 }
-.section .slogun h1 {
+.home .slogun h1 {
     font-size: 60px;
     font-weight: bold;
     color: #fff;
     padding: 40px 10px 20px;
 }
-.section .slogun p {
+.home .slogun p {
     font-size: 14px;
     color: #fff;
     padding: 10px 10px 20px;
     line-height: 1.8;
 }
-.section .slogun p > span {
+.home .slogun p > span {
     font-weight: bold;
     color: #AED42A;
 }
-.section .slogun a > span {
+.home .slogun a > span {
     display: inline-block;
     font-size: 11px;
     color: #fff;
@@ -103,7 +106,13 @@ body, html, #wrap {
     border-radius: 50px;
     margin-top: 30px;
     margin-left: 15px;
+    transition: 0.5s;
 }
+.home .slogun a:hover > span {
+    background: #fff;
+    color: #AED42A;
+}
+
 
 /* section1 배경 */
 .section-outer {
@@ -143,7 +152,7 @@ body, html, #wrap {
     background-image: url(../images/bg_editorial.png);
 }
 .section-outer .section:nth-child(1) .slide3 {
-    background: darkturquoise;
+    background-image: url(../images/bg_tob.png);
 }
 
 /* 슬라이드 화살표 */
@@ -257,7 +266,7 @@ body, html, #wrap {
 }
 .portfolio h2 {
     font-size: 20px;
-    padding: 70px 0 30px 5px;
+    padding: 80px 0 10px 5px;
     left: 0;
     width: 30%;
 }
@@ -265,7 +274,7 @@ body, html, #wrap {
     position: absolute;
     right: 0;
     top: 0;
-    padding: 70px 0 30px;
+    padding: 80px 0 10px;
 }
 .portfolio .tab_menu > li {
     position: relative;
@@ -289,9 +298,11 @@ body, html, #wrap {
     height: 50%;
     overflow: hidden;
     padding: 5px;
-    margin-bottom: 0.5%;
 }
-
+/* .portfolio .gallery li .imgbox {
+    border-bottom: 5px solid #AED42A;
+}
+ */
 /* 갤러리 호버시 정보 */
 .portfolio > div {
     position: relative;
@@ -309,6 +320,7 @@ body, html, #wrap {
     top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0, 0, 0, 0.7);
     opacity: 0;
+    border-bottom: 6px solid #AED42A;
     transition: 0.5s;
 }
 .portfolio .gallery a:hover .overlay {
@@ -393,20 +405,29 @@ body, html, #wrap {
 
 /*------------------- 세번째 섹션: 스킬 */
 
-#skill {
+#profile {
     background: #eee;
+    position: relative;
 }
-.skillContainer {
-    position: relative;;
+.profileContainer {
+    position: relative;
 }
-.skillContainer h2 {
+.profileContainer h2 {
     font-size: 20px;
-    padding: 70px 0 30px 5px;
+    padding: 80px 0 15px 5px;
     left: 0;
     width: 30%;
 }
+#profile .circle {
+    left: 7.5%;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #AED42A;
+    border-radius: 150px;
+    position: absolute;
+}
 
-.skillContainer .skillbar span {
+.profileContainer .profilebar span {
     display: inline-block;
     text-align: left;
     padding-left: 15px;
@@ -416,11 +437,11 @@ body, html, #wrap {
     margin-bottom: 5px;
 
 }
-.skillContainer > div {
+.profileContainer > div {
     width: 60%;
     margin: 20px auto;
 }
-.skillContainer .score {
+.profileContainer .score {
     display: inline-block;
     height: 40px;
     width: 100%;
@@ -429,7 +450,7 @@ body, html, #wrap {
     background: #fff;
     border-radius: 50px;
 }
-.skillContainer .myscore {
+.profileContainer .myscore {
     height: 80%;
     font-size: 12px;
     color: #fff;
@@ -439,27 +460,27 @@ body, html, #wrap {
     padding-right: 20px;
     line-height: 30px;
 }
-.skillContainer .skillbar .myscore {
+.profileContainer .profilebar .myscore {
     margin: 4px 0 0 4px;
 }
 
-.skillContainer .illust .myscore {
+.profileContainer .illust .myscore {
     background: darkblue;
     animation: illustscore 1s both;
 }
-.skillContainer .photoshop .myscore {
+.profileContainer .photoshop .myscore {
     background: darkcyan;
     animation: photoshopscore 1s both 0.3s;
 }
-.skillContainer .indesign .myscore {
+.profileContainer .indesign .myscore {
     background: darkturquoise;
     animation: indesignscore 1s both 0.6s;
 }
-.skillContainer .aftereffect .myscore {
+.profileContainer .aftereffect .myscore {
     background: skyblue;
     animation: aftereffectscore 1s both 0.9s;
 }
-.skillContainer .premiere .myscore {
+.profileContainer .premiere .myscore {
     background: dodgerblue;
     animation: premierescore 1s both 1.2s;
 }
@@ -513,7 +534,8 @@ body, html, #wrap {
 }
 
 .contactContainer h2 {
-    padding: 70px 0 30px 5px;
+    font-size: 20px;
+    padding: 80px 0 15px 5px;
     left: 0;
     width: 30%;
     color: #fff;
@@ -556,7 +578,7 @@ body, html, #wrap {
 
 
 #contact .height35 {
-    height: 36%;
+    height: 35%;
     background: #071F39;
 }
 
