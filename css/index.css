@@ -71,19 +71,22 @@ body, html, #wrap {
 /*------------------- 첫번째 섹션: 홈 */
 
 /* 슬로건 */
+
 .section .slogun {
+    position: absolute;
     top: 15%;
+    left: 12%;
     z-index: 9999999;
 }
 .section .slogun h1 {
     font-size: 60px;
     font-weight: bold;
-    color: #333;
+    color: #fff;
     padding: 40px 10px 20px;
 }
 .section .slogun p {
     font-size: 14px;
-    color: #333;
+    color: #fff;
     padding: 10px 10px 20px;
     line-height: 1.8;
 }
@@ -94,7 +97,7 @@ body, html, #wrap {
 .section .slogun a > span {
     display: inline-block;
     font-size: 11px;
-    color: #333;
+    color: #fff;
     padding: 15px 50px;
     border: 1px solid #fff;
     border-radius: 50px;
@@ -111,6 +114,7 @@ body, html, #wrap {
 }
 .section-outer .section:nth-child(1) .slide-outer {
     height: 100%;
+    position: relative;
 }
 .section-outer .section:nth-child(1) .slide-inner {
     height: 100%;
@@ -332,6 +336,7 @@ body, html, #wrap {
 .portfolio .gallery .pofol_expl p {
     margin-top: 20px;
     font-size: 11px;
+    opacity: 0.7;
 }
 
 
