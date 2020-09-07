@@ -2,6 +2,7 @@ var openGnb = document.querySelector('.open-gnb')
 var elHeader = document.querySelector('#header')
 var elSection = document.querySelector('#section')
 var elOutlayer = document.querySelector('.outlayer')
+var elNav = document.querySelector('.nav')
 
 function openNav() {
     elHeader.classList.toggle('on')

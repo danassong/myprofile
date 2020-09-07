@@ -21,7 +21,9 @@ body, html, #wrap {
 #header-outer {
     position: fixed;
     width: 100%;
+    background: none;
     z-index: 99999;
+    transition: all 0.5s;
 }
 #header .open-gnb {
     display: none;
@@ -39,6 +41,11 @@ body, html, #wrap {
     color: #ccc;
     padding: 0 25px;
     font-size: 14px;
+}
+#header .nav .depth1 > li.on > a {
+    text-decoration: underline;
+    color: #AED42A;
+    font-weight: 700;
 }
 #header .logo {
     font-size: 22px;
@@ -86,12 +93,14 @@ body, html, #wrap {
     font-weight: bold;
     color: #fff;
     padding: 40px 10px 20px;
+    animation: zoomIn 0.8s both;
 }
 .home .slogun p {
     font-size: 14px;
     color: #fff;
     padding: 10px 10px 20px;
     line-height: 1.8;
+    animation: fadeInDown 1s both 0.5s;
 }
 .home .slogun p > span {
     font-weight: bold;
@@ -144,11 +153,9 @@ body, html, #wrap {
     background: rgba(0, 0, 0, 0.5);
 }
 .section-outer .section:nth-child(1) .slide1 {
-    /* background: #004187; */
     background-image: url(../images/bg_heartbutton.png);
 }
 .section-outer .section:nth-child(1) .slide2 {
-    /* background: darkcyan;/ */
     background-image: url(../images/bg_editorial.png);
 }
 .section-outer .section:nth-child(1) .slide3 {
@@ -200,7 +207,7 @@ body, html, #wrap {
     top: 0; left: 0;
 }
 .slide-outer .slick-dots li.slick-active button {
-    animation: progressbar 4.5s both;
+    animation: progressbar 2.5s both;
     background: #fff;
 }
 @keyframes progressbar {
@@ -259,8 +266,193 @@ body, html, #wrap {
 
 
 
+/*------------------- 두번째 섹션: 스킬 */
 
-/*------------------- 두번째 섹션: 포트폴리오 갤러리 */
+#profile {
+    background: #eee;
+    position: relative;
+    z-index: -999;
+}
+.profileContainer {
+    position: relative;
+}
+.profileContainer h2 {
+    font-size: 20px;
+    padding: 80px 0 15px 5px;
+    left: 0;
+    width: 30%;
+}
+#profile .circle {
+    left: 9%;
+    top: -5%;
+    width: 240px;
+    height: 240px;
+    border: 2.5px solid #071F39;
+    opacity: 0.7;
+    border-radius: 150px;
+    position: absolute;
+
+    animation: fadeInDown 1s both;
+}
+#profile .profileimg {
+    left: 9%;
+    width: 240px;
+    top: 18%;
+    position: absolute;
+
+    animation: fadeInDown 1s both 0.1s;
+}
+
+
+#profile .myinfo {
+    position: absolute;
+    margin-top: 400px;
+    width: 200px;
+    line-height: 1.7;
+    font-size: 14px;
+    font-weight: 300;
+    color: #555;
+
+    animation: fadeInLeft 1s both 0.2s;
+
+}
+#profile .myinfo span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #071F39;
+}
+
+#profile .detail_info {
+    position: absolute;
+    display: block;
+    width: 40%;
+}
+
+#profile .detail_info h5 {
+    font-weight: bold;
+    color: #071F39;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#profile .detail_info p {
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+#profile .detail_info span {
+    font-weight: bold;
+}
+
+#profile .major {
+    left: 30%;
+    top: 310%;
+    animation: fadeIn 1s both 0.5s;
+
+}
+
+#profile .activity {
+    left: 30%;
+    top: 465%;
+    animation: fadeIn 1s both 0.7s;
+
+}
+
+
+
+
+.profileContainer .profilebar span {
+    display: inline-block;
+    text-align: left;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: 800;
+    color: #777;
+    margin-bottom: 5px;
+
+}
+.profileContainer .skillbar_box {
+    width: 30%;
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 290%;
+}
+.profileContainer .skillbar_box .profilebar {
+    margin: 12px auto;
+}
+.profileContainer .score {
+    display: inline-block;
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    position: relative;
+    background: #fff;
+    border-radius: 50px;
+}
+.profileContainer .myscore {
+    height: 80%;
+    font-size: 11px;
+    color: #fff;
+    opacity: 0;
+    border-radius: 50px;
+    text-align: right;
+    padding-right: 20px;
+    line-height: 24px;
+}
+.profileContainer .profilebar .myscore {
+    margin: 3px 0 0 3px;
+}
+
+.profileContainer .illust .myscore {
+    background: darkblue;
+    animation: illustscore 1s both;
+}
+.profileContainer .photoshop .myscore {
+    background: darkcyan;
+    animation: photoshopscore 1s both 0.3s;
+}
+.profileContainer .indesign .myscore {
+    background: darkturquoise;
+    animation: indesignscore 1s both 0.6s;
+}
+.profileContainer .aftereffect .myscore {
+    background: skyblue;
+    animation: aftereffectscore 1s both 0.9s;
+}
+.profileContainer .premiere .myscore {
+    background: dodgerblue;
+    animation: premierescore 1s both 1.2s;
+}
+
+@keyframes illustscore {
+    0% {width: 0%;}
+    100% {width: 90%; opacity: 1;}
+}
+@keyframes photoshopscore {
+    0% {width: 0%;}
+    100% {width: 70%; opacity: 1;}
+}
+@keyframes indesignscore {
+    0% {width: 0%;}
+    100% {width: 80%; opacity: 1;}
+}
+@keyframes aftereffectscore {
+    0% {width: 0%;}
+    100% {width: 60%; opacity: 1;}
+}
+@keyframes premierescore {
+    0% {width: 0%;}
+    100% {width: 75%; opacity: 1;}
+}
+
+
+
+
+
+
+
+/*------------------- 세번째 섹션: 포트폴리오 갤러리 */
 .portfolio {
     position: relative;
 }
@@ -270,24 +462,27 @@ body, html, #wrap {
     left: 0;
     width: 30%;
 }
-.portfolio .tab_menu_wrap {
+#portfolio .tab_menu_wrap {
     position: absolute;
-    right: 0;
-    top: 0;
-    padding: 80px 0 10px;
+    margin: 140px 0 0 2%;
+    /* padding: 80px 0 10px; */
 }
-.portfolio .tab_menu > li {
-    position: relative;
-    display: inline-block;
+#portfolio .tab_menu > li {
     padding: 0 20px;
-    text-align: center;
+    line-height: 2;
+    
 }
-.portfolio .tab_menu button {
+#portfolio .tab_menu button {
     position: relative;
-    display: block;
+    /* display: block; */
     background: none;
     font-size: 14px;
     color: #004187;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#portfolio .tab_menu button:hover {
+    color: #AED42A;
 }
 .portfolio .gallery {
     margin: 15px 0;
@@ -298,11 +493,18 @@ body, html, #wrap {
     height: 50%;
     overflow: hidden;
     padding: 5px;
+    opacity: 0;
+    animation:liani 0.5s both;
 }
-/* .portfolio .gallery li .imgbox {
-    border-bottom: 5px solid #AED42A;
+
+@keyframes liani {
+    0% { opacity:0 }
+    100% { opacity:1 }
 }
- */
+
+
+
+
 /* 갤러리 호버시 정보 */
 .portfolio > div {
     position: relative;
@@ -401,110 +603,6 @@ body, html, #wrap {
 }
 
 
-
-
-/*------------------- 세번째 섹션: 스킬 */
-
-#profile {
-    background: #eee;
-    position: relative;
-}
-.profileContainer {
-    position: relative;
-}
-.profileContainer h2 {
-    font-size: 20px;
-    padding: 80px 0 15px 5px;
-    left: 0;
-    width: 30%;
-}
-#profile .circle {
-    left: 7.5%;
-    width: 200px;
-    height: 200px;
-    border: 2px solid #AED42A;
-    border-radius: 150px;
-    position: absolute;
-}
-
-.profileContainer .profilebar span {
-    display: inline-block;
-    text-align: left;
-    padding-left: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #777;
-    margin-bottom: 5px;
-
-}
-.profileContainer > div {
-    width: 60%;
-    margin: 20px auto;
-}
-.profileContainer .score {
-    display: inline-block;
-    height: 40px;
-    width: 100%;
-    line-height: 40px;
-    position: relative;
-    background: #fff;
-    border-radius: 50px;
-}
-.profileContainer .myscore {
-    height: 80%;
-    font-size: 12px;
-    color: #fff;
-    opacity: 0;
-    border-radius: 50px;
-    text-align: right;
-    padding-right: 20px;
-    line-height: 30px;
-}
-.profileContainer .profilebar .myscore {
-    margin: 4px 0 0 4px;
-}
-
-.profileContainer .illust .myscore {
-    background: darkblue;
-    animation: illustscore 1s both;
-}
-.profileContainer .photoshop .myscore {
-    background: darkcyan;
-    animation: photoshopscore 1s both 0.3s;
-}
-.profileContainer .indesign .myscore {
-    background: darkturquoise;
-    animation: indesignscore 1s both 0.6s;
-}
-.profileContainer .aftereffect .myscore {
-    background: skyblue;
-    animation: aftereffectscore 1s both 0.9s;
-}
-.profileContainer .premiere .myscore {
-    background: dodgerblue;
-    animation: premierescore 1s both 1.2s;
-}
-
-@keyframes illustscore {
-    0% {width: 0%;}
-    100% {width: 90%; opacity: 1;}
-}
-@keyframes photoshopscore {
-    0% {width: 0%;}
-    100% {width: 70%; opacity: 1;}
-}
-@keyframes indesignscore {
-    0% {width: 0%;}
-    100% {width: 80%; opacity: 1;}
-}
-@keyframes aftereffectscore {
-    0% {width: 0%;}
-    100% {width: 60%; opacity: 1;}
-}
-@keyframes premierescore {
-    0% {width: 0%;}
-    100% {width: 75%; opacity: 1;}
-}
 
 
 
