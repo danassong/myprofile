@@ -245,4 +245,36 @@
     });
 
 
+
+
+
+
+    // 포트폴리오 필터
+    $('.all').show()
+    $('.tab_menu > li > button').on('click', function(){
+        $(this).addClass('act')
+        $(this).parent().siblings().find('button').removeClass('act')
+        var datac = $(this).attr('data-c')
+        $('.all').css({
+            transform: 'scale(0)'
+        }).stop().hide()
+        $('.'+datac).stop().show(300).css({
+            transform: 'scale(1)'
+        })
+        return false
+    })
+
+    $('.tab_items > div > a').on('click', function() {
+        $(this).next().addClass('on')
+        return false
+    })
+
+    $('.close_detail, .detail_wrap').on('click', function() {
+        $('.detail_wrap').removeClass('on')
+    })
+
+    $('.detail_con').on('click', function(){
+        return false;
+    })
+
 })(jQuery)
