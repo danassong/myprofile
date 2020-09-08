@@ -144,7 +144,7 @@
 
         // 스크롤 시 헤더 색상
         sct = $(this).scrollTop();
-
+        var winHeight = $(this).height();
         if (sct >= winHeight) {
             $(".header-outer").css({
                 background: 'rgba(255,255,255,0.5)'

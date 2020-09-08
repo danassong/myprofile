@@ -43,7 +43,6 @@ body, html, #wrap {
     font-size: 14px;
 }
 #header .nav .depth1 > li.on > a {
-    text-decoration: underline;
     color: #AED42A;
     font-weight: 700;
 }
