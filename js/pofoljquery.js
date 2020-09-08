@@ -5,9 +5,7 @@
     $('.imgContainer').hide()
     $('.portfolio').hide()
     $('.contact').hide()
-    $('.contact_info').hide()
-    $('.contact_message').hide()
-    $('.bye').hide()
+    
 
 
 
@@ -184,16 +182,8 @@
 
         if (sct >= $('#contact').offset().top) {
             $('.contact').stop().fadeIn(300)
-            $('.contact_info').stop().fadeIn(600)
-            $('.contact_message').stop().fadeIn(900)
-            $('.bye').stop().fadeIn(1200)
-
         } else {
             $('.contact').hide()
-            $('.contact_info').hide()
-            $('.contact_message').hide()
-            $('.bye').hide()
-
         }
 
 

@@ -640,6 +640,13 @@ body, html, #wrap {
     float: left;
     margin-left: 70px;
 }
+.contactContainer .contact_info {
+    animation: fadeIn 1s both 0.2s;
+}
+.contactContainer .contact_message {
+    animation: fadeIn 1s both 0.5s;
+
+}
 .contactContainer .contact_info tr {
     border-bottom: 1px solid #fff;
 }
@@ -677,6 +684,10 @@ body, html, #wrap {
     background: #071F39;
 }
 
+#contact .bye {
+    animation: fadeIn 1s both 0.8s;
+
+}
 #contact .bye p {
     text-align: center;
     font-size: 14px;
