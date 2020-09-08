@@ -1,6 +1,5 @@
 @charset "utf-8";
 @import "reset.css";
-@import "common.css";
 
 .row {
     max-width: 1200px;
@@ -11,20 +10,19 @@
 
 body, html, #wrap {
     height: 100%;
-    /* background: black; */
 }
-
+.header-outer {
+    position: fixed;
+    width: 100%;
+    z-index: 9999999;
+    transition: all 0.5s;
+    /* background: rgba(255, 255, 255, 0.5); */
+}
 #header {
     position: relative;
     height: 90px;
 }
-#header-outer {
-    position: fixed;
-    width: 100%;
-    background: none;
-    z-index: 99999;
-    transition: all 0.5s;
-}
+
 #header .open-gnb {
     display: none;
 }

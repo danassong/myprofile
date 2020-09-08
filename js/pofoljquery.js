@@ -4,6 +4,12 @@
     $('.profileContainer').hide()
     $('.imgContainer').hide()
     $('.portfolio').hide()
+    $('.contact').hide()
+    $('.contact_info').hide()
+    $('.contact_message').hide()
+    $('.bye').hide()
+
+
 
 
 
@@ -142,18 +148,20 @@
     var sct = 0;
     $(window).scroll(function () {
 
-        // 스크롤 시 헤더 색상
         sct = $(this).scrollTop();
         var winHeight = $(this).height();
-        if (sct >= winHeight) {
-            $(".header-outer").css({
-                background: 'rgba(255,255,255,0.5)'
-            });
-        } else {
-            $(".header-outer").css({
-                background: 'none'
-            });
-        }
+
+
+        // // 스크롤 시 헤더 색상
+        // if (sct >= winHeight) {
+        //     $(".header-outer").css({
+        //         background: 'rgba(255,255,255,1)'
+        //     });
+        // } else {
+        //     $(".header-outer").css({
+        //         background: 'none'
+        //     });
+        // }
 
 
 
@@ -174,6 +182,22 @@
             $('.portfolio').hide()
         }
 
+        if (sct >= $('#contact').offset().top) {
+            $('.contact').stop().fadeIn(300)
+            $('.contact_info').stop().fadeIn(600)
+            $('.contact_message').stop().fadeIn(900)
+            $('.bye').stop().fadeIn(1200)
+
+        } else {
+            $('.contact').hide()
+            $('.contact_info').hide()
+            $('.contact_message').hide()
+            $('.bye').hide()
+
+        }
+
+
+        // 포트폴리오 순차적 띄우기
         var portcount = $('.gallery > li').length
         if (sct >= $('#portfolio').offset().top) {
             for (var i = 0; i < portcount; i++) {
