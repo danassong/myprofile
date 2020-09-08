@@ -7,6 +7,10 @@
     $('.contact').hide()
     
 
+    /* // 새로고침하면 첫화면이 뜨도록
+    $('html, body').animate({
+        scrollTop: '0'
+    }, 800) */
 
 
 
