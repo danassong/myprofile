@@ -36,6 +36,8 @@
     $('.outlayer').on('click', openNav)
 
 
+
+
     $(window).resize(function(){
         var winWidth = $(this).innerWidth()
         if (winWidth > 800) {
@@ -161,10 +163,6 @@
         //     });
         // }
 
-
-
-
-
         // 해당화면 온오프
         if (sct >= $('#profile').offset().top) {
             $('.imgContainer').stop().fadeIn(300)
@@ -203,21 +201,19 @@
 
 
 
-
+    // nav 클릭시 이동
     $('.nav .depth1 > li > a').on('click', function (e) {
-        // e.preventDefault();
+
+        e.preventDefault()
+        var index = $(this).parent().index()
+        var distance = $('.section').eq(index).offset().top
         $(this).parent().addClass('on')
         $(this).parent().siblings().removeClass('on')
-        var index = $(this).parent().index()
-        $('body, html').animate({
-            scrollTop: index * winHeight
-        }, 800)
+        $('html, body').stop().animate({
+            scrollTop: distance
+        }, 800, 'linear')
 
-        return false //e.preventDefault(); , e.stopPropergation()
     })
-
-
-
 
 
 
