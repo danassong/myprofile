@@ -27,9 +27,12 @@ body, html, #wrap {
     display: none;
 }
 #header .nav {
+    display: inline-block;
+    width: 100%;
     position: absolute;
-    top: 50%; right: 50%;
-    transform: translate(50%, -50%);   
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
 }
 #header .nav .depth1 > li {
     display: inline-block;
@@ -47,12 +50,11 @@ body, html, #wrap {
 #header .logo {
     font-size: 22px;
     color: #AED42A;
+    float: left;
+    width: 50%;
     position: absolute;
-    display: block;
-    top: 50%; right: 0;
+    top: 50%;
     transform: translateY(-50%);
-    padding: 0 20px;
-    text-align: right;
 }
 #header .logo span {
     font-size: 12px;
